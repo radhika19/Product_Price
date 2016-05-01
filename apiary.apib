@@ -1,0 +1,56 @@
+# Price
+
+Display and store daily prices of products
+
+## Products [/price_app/api/price/]
+
+### Get a product's price [GET]
+
++ Response 200 (application/json)
+
+        {
+            "product_id": 1,
+            "name": "apple",
+            "price": 123.23
+        }
+
+### Update a new price [POST]
+
+
++ Request (application/json)
+
+        { 
+           "price": 130
+        }
+
++ Response 200 (application/json)
+         {
+            "status": "success",
+            "message": "updated"
+        }
+    
++ Error Response
+    
+        {
+            "status": "fail",
+            "message": "cannot update"
+        }
+
+## Product History [/price_app/api/price_history/]
+
+### Get 30 days Price [GET]
+
++ Response 200 (application/json)
+
+        {
+            "price": [ 123,
+                       129
+                     ]
+        }
+        
++ Error Response 
+
+        {
+            "status": "fail"
+            "message": "matching query does not exist"
+        }
